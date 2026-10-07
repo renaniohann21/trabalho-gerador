@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerador de Ideias de Refeições | O que comer hoje?</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🍽️ O que comer hoje?</h1>
+    <p>Gerador de ideias de refeições para facilitar o seu dia a dia</p>
+  </header>
+
+  <main class="container">
+    <div class="tipo-refeicao">
+      <button class="tipo-btn ativo" data-tipo="cafe" onclick="selecionarTipo(this)">
+        <span class="emoji">☕</span>
+        Café da manhã
+      </button>
+      <button class="tipo-btn" data-tipo="almoco" onclick="selecionarTipo(this)">
+        <span class="emoji">🍲</span>
+        Almoço
+      </button>
+      <button class="tipo-btn" data-tipo="jantar" onclick="selecionarTipo(this)">
+        <span class="emoji">🌙</span>
+        Jantar
+      </button>
+      <button class="tipo-btn" data-tipo="lanche" onclick="selecionarTipo(this)">
+        <span class="emoji">🥪</span>
+        Lanche
+      </button>
+    </div>
+
+    <div class="opcoes">
+      <span class="chip ativo" data-filtro="todos" onclick="toggleFiltro(this)">Todos</span>
+      <span class="chip" data-filtro="rapido" onclick="toggleFiltro(this)">⚡ Rápido</span>
+      <span class="chip" data-filtro="saudavel" onclick="toggleFiltro(this)">🥗 Saudável</span>
+      <span class="chip" data-filtro="vegetariano" onclick="toggleFiltro(this)">🌱 Vegetariano</span>
+    </div>
+
+    <button class="btn-gerar" onclick="gerarIdeia()">
+      ✨ Gerar ideia de refeição
+    </button>
+
+    <div class="resultado" id="resultado">
+      <div class="card-resultado">
+        <div class="categoria" id="categoria"></div>
+        <h2 id="titulo"></h2>
+        <p id="descricao"></p>
+        <div class="tempo" id="tempo"></div>
+        <div class="acoes">
+          <button class="btn-secundario" onclick="gerarIdeia()">🔄 Outra ideia</button>
+          <button class="btn-secundario" onclick="copiarIdeia()">📋 Copiar</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    Feito para facilitar o dia a dia • Escolha, gere e aproveite 💚
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
