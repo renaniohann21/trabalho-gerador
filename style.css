@@ -1,0 +1,259 @@
+:root {
+  --bg: #0f172a;
+  --card: #1e293b;
+  --accent: #22c55e;
+  --accent-hover: #16a34a;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --border: #334155;
+  --highlight: #4ade80;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  min-height: 100vh;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+  max-width: 600px;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+  background: linear-gradient(90deg, #22c55e, #4ade80);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+header p {
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.container {
+  background: var(--card);
+  border-radius: 20px;
+  padding: 28px;
+  width: 100%;
+  max-width: 520px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--border);
+}
+
+.tipo-refeicao {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.tipo-btn {
+  background: #0f172a;
+  border: 2px solid var(--border);
+  color: var(--text);
+  padding: 14px 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.tipo-btn:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.tipo-btn.ativo {
+  background: rgba(34, 197, 94, 0.15);
+  border-color: var(--accent);
+  color: var(--highlight);
+}
+
+.tipo-btn span.emoji {
+  font-size: 1.6rem;
+}
+
+.opcoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+  justify-content: center;
+}
+
+.chip {
+  background: #0f172a;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  user-select: none;
+}
+
+.chip:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.chip.ativo {
+  background: rgba(34, 197, 94, 0.2);
+  border-color: var(--accent);
+  color: var(--highlight);
+}
+
+.btn-gerar {
+  width: 100%;
+  background: var(--accent);
+  color: #052e16;
+  border: none;
+  padding: 16px;
+  border-radius: 14px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-gerar:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(34, 197, 94, 0.3);
+}
+
+.btn-gerar:active {
+  transform: translateY(0);
+}
+
+.resultado {
+  margin-top: 28px;
+  min-height: 140px;
+  display: none;
+  animation: fadeIn 0.4s ease;
+}
+
+.resultado.visivel {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card-resultado {
+  background: #0f172a;
+  border-radius: 16px;
+  padding: 22px;
+  border: 1px solid var(--border);
+  position: relative;
+}
+
+.card-resultado .categoria {
+  font-size: 0.8rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.card-resultado h2 {
+  font-size: 1.45rem;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.card-resultado p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.tempo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  background: rgba(34, 197, 94, 0.1);
+  color: var(--highlight);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.acoes {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.btn-secundario {
+  flex: 1;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.btn-secundario:hover {
+  border-color: var(--accent);
+  color: var(--highlight);
+}
+
+footer {
+  margin-top: 40px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.7rem;
+  }
+  .tipo-refeicao {
+    grid-template-columns: 1fr 1fr;
+  }
+  .container {
+    padding: 20px;
+  }
+}
